@@ -2,7 +2,7 @@
 
 **Transforming pharmaceutical compliance from weeks to hours using AI**
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](YOUR_STREAMLIT_URL_HERE)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-regulatory-change-tracker.streamlit.app/)
 
 ## 🎯 Problem Statement
 
@@ -43,7 +43,7 @@ Our AI-powered tracker provides **real-time regulatory intelligence**:
 
 ## 📊 Demo
 
-**Live Demo:** [YOUR_STREAMLIT_URL_HERE](YOUR_STREAMLIT_URL_HERE)
+**Live Demo:** [https://ai-regulatory-change-tracker.streamlit.app/](https://ai-regulatory-change-tracker.streamlit.app/)
 
 ### Sample Results:
 - **Detection Speed:** Real-time scanning of 10+ regulatory sources
@@ -99,7 +99,7 @@ pip install streamlit beautifulsoup4 requests pandas plotly
 
 ### Run Locally
 ```bash
-git clone https://github.com/YOUR_USERNAME/regulatory-tracker-hackathon
+git clone https://github.com/perimaitri17/AI-Regulatory-Change-Tracker-
 cd regulatory-tracker-hackathon
 streamlit run streamlit_app.py
 ```
@@ -115,7 +115,7 @@ Built for **Indegene Hackathon** in partnership with AWS.
 
 ## 📞 Contact
 
-- **Demo:** [Live Application](YOUR_STREAMLIT_URL_HERE)
+- **Demo:** [Live Application](https://ai-regulatory-change-tracker.streamlit.app/)
 - **Repository:** This GitHub repo
 - **Presentation:** Available upon request
 
