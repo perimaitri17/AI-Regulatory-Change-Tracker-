@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import json
 import sqlite3
