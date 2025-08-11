@@ -96,6 +96,18 @@ def get_risk_color(risk_level):
     colors = {"high": "#FF4B4B", "medium": "#FFA500", "low": "#28A745"}
     return colors.get(risk_level, "#6C757D")
 
+def safe_json_parse(value):
+    """Safely parse JSON, returning the value if it's already parsed"""
+    if isinstance(value, str):
+        try:
+            return json.loads(value)
+        except (json.JSONDecodeError, TypeError):
+            return [value]  # Return as single-item list if parsing fails
+    elif isinstance(value, (list, dict)):
+        return value
+    else:
+        return [str(value)]  # Convert to string and wrap in list
+
 def map_changes_to_products(changes, products):
     """Map regulatory changes to affected products"""
     impact_mapping = {
@@ -120,11 +132,11 @@ def map_changes_to_products(changes, products):
             if keyword in change_text:
                 for product_name in product_names:
                     affected_products.append({
-                        "change_id": change["id"],
+                        "change_id": change.get("id", "unknown"),
                         "product_name": product_name,
                         "change_title": change["title"],
                         "risk_level": change["risk_level"],
-                        "impact_areas": json.loads(change["impact_areas"])
+                        "impact_areas": safe_json_parse(change["impact_areas"])
                     })
                 break  # Only match once per change
     
@@ -275,7 +287,7 @@ def main():
                     # Impact areas
                     st.markdown("**Impact Areas:**")
                     try:
-                        impact_areas : change["impact_areas"] if isinstance(change["impact_areas"], list) else json.loads(change["impact_areas"])
+                        impact_areas = safe_json_parse(change["impact_areas"])
                         for area in impact_areas:
                             st.markdown(f"• {area}")
                     except:
