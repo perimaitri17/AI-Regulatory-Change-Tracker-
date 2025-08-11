@@ -275,7 +275,7 @@ def main():
                     # Impact areas
                     st.markdown("**Impact Areas:**")
                     try:
-                        "impact_areas": change["impact_areas"] if isinstance(change["impact_areas"], list) else json.loads(change["impact_areas"])
+                        impact_areas : change["impact_areas"] if isinstance(change["impact_areas"], list) else json.loads(change["impact_areas"])
                         for area in impact_areas:
                             st.markdown(f"• {area}")
                     except:
